@@ -15,6 +15,9 @@ on:
         
 env:
   envchoice: ${{ inputs.envchoice }} 
+  if: inputs.envchoice == 'ctdev'
+    lchoice:'new.js'
+
 
 jobs:
   check-test:
@@ -24,5 +27,5 @@ jobs:
     - id: step1
       run: |
         echo ${{ env.envchoice }}
-        echo ${{ env.envchoice }} 
+        echo ${{ env.lchoice }} 
       
