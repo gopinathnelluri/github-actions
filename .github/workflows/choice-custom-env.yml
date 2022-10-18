@@ -26,6 +26,7 @@ jobs:
       if: env.envchoice == 'ctdev' &&  success()
       run: |
         echo "lchoice=new" >> $GITHUB_ENV
+        echo ${{ env.lchoice }} 
         
   check-test2:
     name: Check Test2
