@@ -15,7 +15,7 @@ on:
         
 env:
   envchoice: ${{ inputs.envchoice }} 
-  lchoice: Hello
+  lchoice1: Hello
 
 jobs:
   update-env:
@@ -24,12 +24,16 @@ jobs:
     steps:
     - id: step1
       if: env.envchoice == 'ctdev' &&  success()
+      env:
+          lchoice2: New2
       run: |
-        echo "lchoice=new" >> $GITHUB_ENV
-        echo $lchoice
+        echo "lchoice1=new" >> $GITHUB_ENV
+        echo $lchoice1
+        echo $lchoice2
     - id: step2
       run: |
-        echo $lchoice
+        echo $lchoice1
+        echo $lchoice2
         
   check-test2:
     name: Check Test2
@@ -38,5 +42,6 @@ jobs:
     - id: step1
       run: |
         echo ${{ env.envchoice }}
-        echo ${{ env.lchoice }} 
+        echo ${{ env.lchoice1 }} 
+        echo ${{ env.lchoice2 }} 
       
