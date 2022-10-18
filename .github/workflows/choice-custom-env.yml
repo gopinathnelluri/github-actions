@@ -22,11 +22,12 @@ jobs:
     name: Check Test
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
     - id: step1
       if: env.envchoice == 'ctdev' &&  success()
       run: |
         echo "lchoice=new" >> $GITHUB_ENV
-        echo ${{ env.lchoice }} 
+        echo $lchoice
         
   check-test2:
     name: Check Test2
