@@ -15,8 +15,7 @@ on:
         
 env:
   envchoice: ${{ inputs.envchoice }} 
-  if: inputs.envchoice == 'ctdev'
-    lchoice:'new.js'
+  lchoice: "'${{inputs.envchoice}}' == 'ctdev'"
 
 
 jobs:
