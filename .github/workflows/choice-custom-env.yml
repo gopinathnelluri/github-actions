@@ -23,6 +23,6 @@ jobs:
     steps:
     - id: step1
       run: |
-      echo ${{ env.envchoice }}
-      echo ${{ env.envchoice }} 
+        echo ${{ env.envchoice }}
+        echo ${{ env.envchoice }} 
       
