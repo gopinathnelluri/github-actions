@@ -4,7 +4,7 @@ on:
       envchoice:
         description: 'Runner'
         required: true
-        default: 'warning' 
+        default: ctdev 
         type: choice
         options:
         - ctdev
@@ -22,5 +22,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - id: step1
-      run: echo "$envchoice"
+      run: echo ${{ env.envchoice }} 
       
