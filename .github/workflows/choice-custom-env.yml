@@ -16,7 +16,6 @@ on:
 env:
   envchoice: ${{ inputs.envchoice }} 
   lchoice1: Hello
-  lchoice2: contains('Hello world', 'llo')
 
 jobs:
   update-env:
