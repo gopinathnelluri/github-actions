@@ -22,5 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - id: step1
-      run: echo ${{ env.envchoice }} 
+      run: |
+      echo ${{ env.envchoice }}
+      echo ${{ env.envchoice }} 
       
