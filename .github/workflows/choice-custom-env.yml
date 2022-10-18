@@ -15,12 +15,20 @@ on:
         
 env:
   envchoice: ${{ inputs.envchoice }} 
-  lchoice: ${{ if eq(inputs.envchoice, 'ctdev') }}
-
+  lchoice: Hello
 
 jobs:
-  check-test:
+  update-env:
     name: Check Test
+    runs-on: ubuntu-latest
+    steps:
+    - id: step1
+      if: env.envchoice == 'ctdev' &&  success()
+      run: |
+        echo "lchoice=new" >> $GITHUB_ENV
+        
+  check-test2:
+    name: Check Test2
     runs-on: ubuntu-latest
     steps:
     - id: step1
